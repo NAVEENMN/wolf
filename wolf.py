@@ -3,6 +3,7 @@ from tools.Research import Research
 from tools.Problems import Problems
 from tools.Papers import Papers
 from tools.Investigations import Investigations
+from tools.Innovent import Innovent
 
 question = [
         {
@@ -22,7 +23,7 @@ def main():
             'type': 'list',
             'name': 'tools',
             'message': 'Please select the tool you wish to use.\n',
-            'choices': ['research', 'problem', 'investigation', 'papers', 'ideas', 'queries'],
+            'choices': ['research', 'problem', 'investigation', 'papers', 'ideas', 'queries', 'innovent'],
         }
     ]
     answers = prompt(question)
@@ -43,6 +44,9 @@ def main():
         print("ideas: To be implemented")
     elif tool == "queries":
         print("queries: To be implemented")
+    elif tool == 'innovent':
+        _innovent = Innovent(path=root_path)
+        _innovent.setup()
     else:
         print("*** INFO: Not a valid tool")
 
