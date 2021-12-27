@@ -4,6 +4,7 @@ from tools.Problems import Problems
 from tools.Papers import Papers
 from tools.Investigations import Investigations
 from tools.Innovent import Innovent
+from tools.DataScience import DataScience
 
 question = [
         {
@@ -29,8 +30,26 @@ def main():
     answers = prompt(question)
     tool = answers['tools']
     if tool == 'research':
-        _research = Research(path=root_path)
-        _research.setup()
+
+        _question = [
+            {
+                'type': 'list',
+                'name': 'rtype',
+                'message': 'Please select the type of research you are conducting.\n',
+                'choices': ['normal', 'datascience'],
+            }
+        ]
+        _answer = prompt(_question)
+        rtype = _answer['rtype']
+        if rtype == 'normal':
+            _research = Research(path=root_path)
+            _research.setup()
+        elif rtype == 'datascience':
+            print("To Be Implemented")
+            _datascience = DataScience(path=root_path)
+            _datascience.setup()
+        else:
+            print("Invalid")
     elif tool == 'problem':
         _problems = Problems(path=root_path)
         _problems.setup()

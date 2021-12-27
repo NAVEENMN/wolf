@@ -1,6 +1,7 @@
 import os
 from PyInquirer import prompt
 
+
 class Innovent:
     def __init__(self, path):
         print("*** INFO: Innovent")
