@@ -37,6 +37,10 @@ class DataScience:
 
         return status, answers
 
+    def add_data_table(self, fp):
+        fp.write(f"| Variable    | Type        | Description     |\n")
+        fp.write(f"| Syntax      | Description | Test Text     |\n")
+
     def setup(self):
         status, answers = self._setup_directories()
         if not status:
@@ -49,15 +53,23 @@ class DataScience:
             f.write(f"Data Science research involves methodical steps and process to uncover answers from the data.\n")
 
             f.write(f"## Description/Goal/Objective\n")
-            f.write(f"What are you trying to uncover using data?")
+            f.write(f"What are you trying to uncover using data?\n")
 
             f.write(f"## Data Description\n")
-            f.write(f"Describe your data.")
+            f.write(f"Describe your data.\n")
+            f.write(f"Quick reference for data categorization\n")
+            f.write(f"Quantitative -> Discrete, Continuous\n")
+            f.write(f"Qualitative -> Nominal(categorical), Ordinal(has order)\n")
+
             f.write(f"#### Data Properties\n")
             f.write(f"What are you trying to uncover using data?")
-            f.write(f"What are the rows and columns and types? What does each variable mean and what are their units?\n")
+            f.write(f"What are the rows and columns and types? "
+                    f"What does each variable mean and what are their units?\n")
+
             f.write(f"#### Data Acquisition\n")
-            f.write(f"How was this data acquired? Who acquired it and what sensors and where was it acquired? Was this a statistical sample?")
+            f.write(f"How was this data acquired? "
+                    f"Who acquired it and what sensors and where was it acquired? "
+                    f"Was this a statistical sample?")
 
         save_path_file = os.path.join(self.dir_path, answers["directory_name"], "steps.md")
         with open(save_path_file, "w") as f:

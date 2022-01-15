@@ -1,0 +1,1 @@
+pyinstaller wolf.py --paths /Users/naveenmysore/Documents/wolf/tools --distpath /Users/naveenmysore/

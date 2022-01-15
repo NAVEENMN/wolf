@@ -45,6 +45,7 @@ class Problems:
             f.write('What is the problem? : \n')
             f.write('Why is it a problem? : \n')
             f.write('Can you quantify the problem? : \n')
+            f.write('At what state do you consider a problem is solved? : \n')
 
         _techniques = Techniques(path=os.path.join(self.dir_path, answers['directory_name']))
         _techniques.trail_and_error()

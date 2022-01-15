@@ -102,6 +102,10 @@ class Research:
         self.fp.write("## Problem Statement\n")
         self.fp.write("Your problem statement goes here.\n")
 
+    def add_project_end(self):
+        self.fp.write("## Project end state\n")
+        self.fp.write("All projects needs an end state and upon arrival to conclude project as complete.\n")
+
     def check_for_type_of_research(self):
         questions = [
             {
@@ -196,6 +200,8 @@ class Research:
             self.add_a_sentence(
                 line="This objective of this document is to clearly organize information. Also, help myself in constructing an execution plan.")
             self.add_a_sentence(line="The output of this projects or research will be a paper, code or video.")
+
+            self.add_project_end()
 
             if research['type'] == "inductive":
                 self.add_inductive_section()

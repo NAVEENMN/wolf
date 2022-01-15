@@ -41,7 +41,8 @@ class Investigations:
         with open(save_path_file, "w") as f:
             f.write(f"# {answers['title']}\n")
             f.write("---\n")
-            f.write(f"Investigations are launched when an incident has occurred/occurring.\n")
+            f.write(f"Investigations are launched when an incident has occurred/occurring. "
+                    f"Investigations are considered solved when the source/root/causes are identified.\n")
 
             f.write(f"## Description\n")
             f.write(f"Your incident description goes here. "
