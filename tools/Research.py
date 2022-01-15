@@ -102,7 +102,14 @@ class Research:
         self.fp.write("## Problem Statement\n")
         self.fp.write("Your problem statement goes here.\n")
 
-    def add_project_end(self):
+    def add_project_current_state(self):
+        self.fp.write("## Project current state\n")
+        self.fp.write("All projects must have some initial state, what is the current state of art. "
+                      "For example: What are the costs associated with current state of the art. "
+                      "In terms of time, energy, efficiency or price."
+                      "Or, what is the performance metric etc.\n")
+
+    def add_project_end_state(self):
         self.fp.write("## Project end state\n")
         self.fp.write("All projects needs an end state and upon arrival to conclude project as complete.\n")
 
@@ -201,7 +208,7 @@ class Research:
                 line="This objective of this document is to clearly organize information. Also, help myself in constructing an execution plan.")
             self.add_a_sentence(line="The output of this projects or research will be a paper, code or video.")
 
-            self.add_project_end()
+
 
             if research['type'] == "inductive":
                 self.add_inductive_section()
@@ -225,9 +232,8 @@ class Research:
                 elif research['solved'] == 'partially_solved':
                     self.add_a_line(line=f"This is a design research targeting a partially solved problem.")
 
-                self.add_a_line(line="## Current state\n")
-                self.add_a_line(
-                    line="What are the costs associated with current state of the art. In terms of time, energy, efficiency or price.")
+                self.add_project_current_state()
+                self.add_project_end_state()
 
                 # Creating components structures
                 if not os.path.exists(f"{self.get_dir_path()}/methods"):
